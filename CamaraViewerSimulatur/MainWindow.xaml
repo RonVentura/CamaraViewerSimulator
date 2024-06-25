@@ -5,12 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CamaraViewerSimulatur"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="271*"/>
-            <ColumnDefinition Width="129*"/>
-        </Grid.ColumnDefinitions>
-
-    </Grid>
+        Title="Camera Viewer Simulation" Height="450" Width="800">
+        <Grid>
+            <Image Name="ImageViewer" Margin="3,6,377,74"></Image>
+            <Button Name="LoadImage" Content="Load Image" Click="LoadImage_click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="50" Margin="150,0,0,16"></Button>
+         </Grid>
 </Window>
