@@ -1,4 +1,4 @@
-# CamaraViewerSimulatur
+# CamaraViewerSimulator
 ![alt text](image.png)
 
 This simulator purpose is to help a user to find the optimal exposure settings for a spesific image. It provides live histogram presentation and a slider to define the level of brightness in the image.
