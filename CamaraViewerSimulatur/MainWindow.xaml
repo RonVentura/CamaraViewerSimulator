@@ -9,5 +9,6 @@
         <Grid>
             <Image Name="ImageViewer" Margin="3,6,377,74"></Image>
             <Button Name="LoadImage" Content="Load Image" Click="LoadImage_click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="50" Margin="150,0,0,16"></Button>
-         </Grid>
+            <Canvas Name="HistCanvas" Height="400" Width="350" Margin="437,10,10,10"></Canvas> 
+        </Grid>
 </Window>
