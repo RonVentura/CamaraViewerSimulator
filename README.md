@@ -12,7 +12,7 @@ I decided to not apply MVVM structure, due to lack of familiarity and time.
 
 # Installation and use
 
-- git clone https://github.com/RonVentura/CameraViewerSimulator.git
+- git clone https://github.com/RonVentura/CameraViewerSimulator
 - Open the solution file in Visual Studio
 - Build the solution and run the project
 - For your convenient, there are 2 images attaches to the project
