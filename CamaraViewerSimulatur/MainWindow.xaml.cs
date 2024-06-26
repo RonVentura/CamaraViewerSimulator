@@ -17,7 +17,8 @@ namespace CamaraViewerSimulatur
     /// </summary>
     public partial class MainWindow : Window
 
-    {
+    {   
+        // initialization
         private BitmapImage chosenImage;
         private WriteableBitmap loadedImage;
         private int width;
@@ -31,6 +32,10 @@ namespace CamaraViewerSimulatur
 
         private void LoadImage_click(object sender, RoutedEventArgs e)
         {
+            /// <summary>
+            /// This function loading the image from the file system and adjust it to the main app window
+            /// </summary>
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
             Slider.Value = 10;
             if (openFileDialog.ShowDialog() == true)
@@ -49,12 +54,19 @@ namespace CamaraViewerSimulatur
 
         private void SliderChange(object sender, RoutedPropertyChangedEventArgs<double> e) 
         {
-            double exp = (Slider.Value)/ 10;
+            ///<summary>
+            /// This function gets the slider value, scale it, and sent it to ChangeExposure()
+            /// </summary>
+
+            double exp = (Slider.Value)/ 10; // assuming slider min value 0, slider max value 20
             ChangeExposure(exp);
         }
 
         private void ChangeExposure(double exp)
         {   
+            ///<summary>
+            /// This function gets the scaled slider value, calc the new pixels value, and present the new image
+            /// </summary>
             if (ImageViewer.Source == null) 
             {
                 return;
@@ -76,6 +88,9 @@ namespace CamaraViewerSimulatur
 
         private void calc_hist()
         {
+            ///<summary>
+            /// This function calculate and draw the histogram for the current presented image
+            /// </summary>
             HistCanvas.Children.Clear();
             int[] hist = new int[256];
             if (loadedImage.Format.BitsPerPixel == 8) // Assuming image is 8-bit grayscale
@@ -100,7 +115,7 @@ namespace CamaraViewerSimulatur
 
             for (int j = 0; j < hist.Length; j++) // Draw hist
             {
-                int x = (int)((j * HistCanvas.Width / (double)255));
+                int x = (int)((j * HistCanvas.Width / (double)255)); //fit to canvas
                 Line line = new Line
                 {   
                     X1 = x,
@@ -115,3 +130,4 @@ namespace CamaraViewerSimulatur
         }
     }
 }
+    
